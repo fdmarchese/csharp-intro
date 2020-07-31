@@ -16,7 +16,7 @@ namespace chsarp_intro
                     (Opcion)seleccion : 
                     Opcion.Void;
 
-                Console.WriteLine();
+                Console.Clear();
 
                 Dispatcher.Execute(opcion);
 

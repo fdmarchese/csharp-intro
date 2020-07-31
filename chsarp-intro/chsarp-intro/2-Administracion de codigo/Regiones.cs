@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace chsarp_intro._2_Administracion_de_codigo
+﻿namespace chsarp_intro._2_Administracion_de_codigo
 {
     public static class Regiones
     {

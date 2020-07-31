@@ -198,6 +198,41 @@ namespace chsarp_intro._1_Tipos_de_datos
             // x.Domicilio.Calle = "otra calle";
         }
 
+        /// <summary>
+        /// Dado que C# tiene tipos estáticos en tiempo de compilación, después de declarar una variable, no se puede volver a declarar 
+        /// ni se le puede asignar un valor de otro tipo a menos que ese tipo sea convertible de forma implícita al tipo de la variable. 
+        /// Por ejemplo, string no se puede convertir de forma implícita a int.
+        /// Para más detalles ver este link: https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/types/casting-and-type-conversions
+        /// </summary>
+        public static void Castings()
+        {
+            Console.WriteLine($"-----{nameof(Castings)}-----");
+            Console.WriteLine();
+
+            // hay algunos cast implícitos que se pueden realizar como por ejemplo:
+            int numero = 10;
+            Console.WriteLine($"declaramos una variable llamada '{nameof(numero)}' de tipo int con el valor {numero}");
+
+            Console.WriteLine("Escenarios de casting válidos:");
+
+            long numeroMasGrande = numero; // como la asignación siempre va a funcionar, entonces el cast es implícito.
+            Console.WriteLine($"Declaramos otra variable llamada '{nameof(numeroMasGrande)}' de tipo long y le asignamos el valor de '{nameof(numero)}'");
+            Console.WriteLine($"La variable '{nameof(numeroMasGrande)}' fue asignada con el valor '{numeroMasGrande}' utilizando un casteo implícito.");
+
+            short numeroMasPequeno = (short)numero; // el casteo aquí debe ser explícito ya que es posible que no funcione.
+            Console.WriteLine($"Declaramos otra variable llamada '{nameof(numeroMasPequeno)}' de tipo short y le asignamos el valor de '{nameof(numero)}'");
+            Console.WriteLine($"La variable '{nameof(numeroMasPequeno)}' fue asignada con el valor '{numeroMasPequeno}' utilizando un casteo explícito.");
+
+            Console.WriteLine("Escenarios de casting inválidos:");
+
+            int maxNumero = int.MaxValue;
+            short numeroShort = (short)maxNumero; // en este caso se perderá la información porque el cast no es válido
+            Console.WriteLine("Declaramos 2 variables para ejemplificar un cast en el que se perderá información:");
+            Console.WriteLine($"Declaramos la variable '{nameof(maxNumero)}' de tipo int y le asignamos el máximo valor del tipo int: {maxNumero}");
+            Console.WriteLine($"Declaramos la variable '{nameof(numeroShort)}' de tipo short y le asignamos el valor de '{nameof(maxNumero)}'");
+            Console.WriteLine($"La variable '{nameof(numeroShort)}' queda con el valor '{numeroShort}' utilizando un casteo explícito, generando una pérdida de información.");
+        }
+
         #region Declaraciones privadas
 
         private struct EstructuraPersona
