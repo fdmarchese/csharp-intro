@@ -1,7 +1,7 @@
 ﻿using chsarp_intro._3_Clases_de_Usuario;
 using System;
 
-namespace chsarp_intro._4_Manejo_de_excepciones
+namespace chsarp_intro._4_Validaciones
 {
     public static class Excepciones
     {

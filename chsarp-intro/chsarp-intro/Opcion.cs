@@ -18,6 +18,9 @@
         Casting = 12,
         Manejo_de_excepciones = 13,
         Jerarquia_de_excepciones = 14,
+        Arrays = 15,
+        ICollections = 16,
+        Listas = 17,
         Tipos_anonimos = 19,
         Genericos = 20
     }

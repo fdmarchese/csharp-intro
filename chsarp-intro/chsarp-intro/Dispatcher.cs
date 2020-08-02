@@ -1,6 +1,7 @@
 ﻿using chsarp_intro._1_Tipos_de_datos;
 using chsarp_intro._3_Clases_de_Usuario;
-using chsarp_intro._4_Manejo_de_excepciones;
+using chsarp_intro._4_Validaciones;
+using chsarp_intro._5_Colecciones;
 using System;
 using System.Collections.Generic;
 
@@ -26,6 +27,9 @@ namespace chsarp_intro
             { Opcion.Casting, Tipos.Castings },
             { Opcion.Manejo_de_excepciones, Excepciones.Manejo },
             { Opcion.Jerarquia_de_excepciones, Excepciones.Jerarquia },
+            { Opcion.Arrays, Colecciones.Arrays },
+            { Opcion.ICollections, Colecciones.ICollections },
+            { Opcion.Listas, Colecciones.Listas },
         };
 
         public static void Execute(Opcion opcion)
