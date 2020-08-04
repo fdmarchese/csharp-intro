@@ -29,7 +29,12 @@
         Delegates = 24,
         Delegates_Genericos = 25,
         Lambdas = 26,
-        Tipos_anonimos = 29,
-        Genericos = 30
+        Tipos_anonimos = 27,
+        Genericos = 28,
+        Linq_Consultas = 29,
+        Linq_Where = 30,
+        Linq_Ordering = 31,
+        Linq_Select = 32,
+        Extension_Methods = 33
     }
 }

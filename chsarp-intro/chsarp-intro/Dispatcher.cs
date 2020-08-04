@@ -3,6 +3,7 @@ using chsarp_intro._3_Clases_de_Usuario;
 using chsarp_intro._4_Validaciones;
 using chsarp_intro._5_Delegates;
 using chsarp_intro._6_Colecciones;
+using chsarp_intro._7_Extension_Methods;
 using System;
 using System.Collections.Generic;
 
@@ -40,6 +41,11 @@ namespace chsarp_intro
             { Opcion.Delegates, Delegates.Definicion },
             { Opcion.Delegates_Genericos, Delegates.Genericos },
             { Opcion.Lambdas, Delegates.Lambdas },
+            { Opcion.Linq_Consultas, Linq.Consultas },
+            { Opcion.Linq_Where, Linq.Where },
+            { Opcion.Linq_Ordering, Linq.Ordering },
+            { Opcion.Linq_Select, Linq.Select },
+            { Opcion.Extension_Methods, ExtensionMethods.Definicion },
         };
 
         public static void Execute(Opcion opcion)
