@@ -12,20 +12,23 @@ namespace chsarp_intro
                 ImprimirMenu();
 
                 int.TryParse(Console.ReadLine(), out int seleccion);
-                opcion = seleccion != 0 ? 
-                    (Opcion)seleccion : 
-                    Opcion.Void;
+                opcion = seleccion != 0 ?
+                    (Opcion)seleccion :
+                    Opcion.Salir;
 
                 Console.Clear();
 
                 Dispatcher.Execute(opcion);
 
-                Console.WriteLine();
-                Console.WriteLine("Desea ejecutar otra acción? S/N");
+                if (opcion != Opcion.Salir)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Desea ejecutar otra acción? S/N");
 
-                opcion = char.ToUpper(Console.ReadKey().KeyChar) == 'N' ? 
-                    Opcion.Salir : 
-                    opcion;
+                    opcion = char.ToUpper(Console.ReadKey().KeyChar) == 'N' ?
+                        Opcion.Salir :
+                        opcion;
+                }
             }
             while (opcion != Opcion.Salir);
         }

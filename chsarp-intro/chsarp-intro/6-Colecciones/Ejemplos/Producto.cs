@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace chsarp_intro._5_Colecciones
+namespace chsarp_intro._6_Colecciones
 {
     public class Producto
     {

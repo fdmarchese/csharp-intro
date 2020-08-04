@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace chsarp_intro._5_Colecciones
+namespace chsarp_intro._6_Colecciones
 {
     /// <summary>
     /// El uso de ICollection nos obliga a implementar un set de métodos necesarios para el uso de colecciones.

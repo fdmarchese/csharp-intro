@@ -1,7 +1,8 @@
 ﻿using chsarp_intro._1_Tipos_de_datos;
 using chsarp_intro._3_Clases_de_Usuario;
 using chsarp_intro._4_Validaciones;
-using chsarp_intro._5_Colecciones;
+using chsarp_intro._5_Delegates;
+using chsarp_intro._6_Colecciones;
 using System;
 using System.Collections.Generic;
 
@@ -21,6 +22,7 @@ namespace chsarp_intro
             { Opcion.Tipos_anonimos, Tipos.Anonimos },
             { Opcion.Genericos, Generics.Genericos },
             { Opcion.Clases_de_usuario, Clases.ClasesDeUsuario },
+            { Opcion.Interfaces, Interfaces.Ejemplo },
             { Opcion.Metodos_del_tipo_object, Clases.MetodosDelTipoObject },
             { Opcion.Strings_definicion, Strings.Definicion },
             { Opcion.Strings_funciones_comunes, Strings.FuncionesComunes },
@@ -30,6 +32,14 @@ namespace chsarp_intro
             { Opcion.Arrays, Colecciones.Arrays },
             { Opcion.ICollections, Colecciones.ICollections },
             { Opcion.Listas, Colecciones.Listas },
+            { Opcion.Validation_attribute_Required, ValidationAttributes.Required },
+            { Opcion.Validation_attribute_MaxLength, ValidationAttributes.MaxLength },
+            { Opcion.Validation_attribute_RegularExpressions, ValidationAttributes.ExpresionesRegulares },
+            { Opcion.Validation_attribute_Custom, ValidationAttributes.CustomValidationAttributes },
+            { Opcion.Validation_attribute_Range, ValidationAttributes.Range },
+            { Opcion.Delegates, Delegates.Definicion },
+            { Opcion.Delegates_Genericos, Delegates.Genericos },
+            { Opcion.Lambdas, Delegates.Lambdas },
         };
 
         public static void Execute(Opcion opcion)
