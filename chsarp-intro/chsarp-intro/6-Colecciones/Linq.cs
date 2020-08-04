@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace chsarp_intro._5_Colecciones
+namespace chsarp_intro._6_Colecciones
 {
-    class Colecciones
+    class Linq
     {
     }
 }
