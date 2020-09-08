@@ -52,7 +52,7 @@ namespace chsarp_intro._1_Tipos_de_datos
             Console.WriteLine("Podemos obtener los componentes de un TimeSpan de la siguiente forma:");
             Console.WriteLine($"Obtener los días de {nameof(resultadoTiempo)} : {resultadoTiempo.TotalDays} día/s");
             Console.WriteLine($"Obtener las horas de {nameof(resultadoTiempo)} : {resultadoTiempo.TotalHours} hora/s");
-            Console.WriteLine($"Obtener los minutos de {nameof(resultadoTiempo)} : {resultadoTiempo.TotalSeconds} minuto/s");
+            Console.WriteLine($"Obtener los minutos de {nameof(resultadoTiempo)} : {resultadoTiempo.TotalMinutes} minuto/s");
             Console.WriteLine($"Obtener los segundos de {nameof(resultadoTiempo)} : {resultadoTiempo.TotalSeconds} segundo/s");
 
             // Otro tema importante al momento de utilizar fechas es representarlas como string en el formato en que lo deseamos hacer.

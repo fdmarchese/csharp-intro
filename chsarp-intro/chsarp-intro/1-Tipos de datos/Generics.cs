@@ -43,6 +43,13 @@ namespace chsarp_intro._1_Tipos_de_datos
                     Numero = "1234-5678"
                 }
             };
+
+            Console.WriteLine("Los datos de la persona creada son:");
+            Console.WriteLine("Id Persona: " + persona.Id);
+            Console.WriteLine("Nombre y Apellido: " + persona.Nombre + " " + persona.Apellido);
+            Console.WriteLine("TelefonoId: " + persona.Telefono.Id);
+            Console.WriteLine("Caracteristica: " + persona.Telefono.Caracteristica);
+            Console.WriteLine("Numero: " + persona.Telefono.Numero);
         }
 
         private class BaseClass<TKey>
