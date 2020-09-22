@@ -35,6 +35,7 @@
         Linq_Where = 30,
         Linq_Ordering = 31,
         Linq_Select = 32,
-        Extension_Methods = 33
+        Extension_Methods = 33,
+        Herencia = 34
     }
 }

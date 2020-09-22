@@ -6,13 +6,16 @@ namespace chsarp_intro._1_Tipos_de_datos
     ///           C# es un lenguaje fuertemente tipado.
     ///           En concordancia con la frase anterior, c# provee de una serie de tipos ya definidos. => léase int, string, long, decimal, etc.
     ///           Adicionalmente a los tipos que provee c# se le permite al usuario definir sus propios tipos.
-    ///           C# tratará a todo como objetos. Esto quiere decir que hasta los tipos "primitivos" serán tratados como objetos => por ejemplo int será System.Int32 y string será System.String.
+    ///           C# tratará a todo como objetos. Esto quiere decir que hasta los tipos "primitivos" serán tratados como objetos => 
+    ///           por ejemplo int será System.Int32 y string será System.String.
     ///           C# parte de una jerarquía de objetos donde se pre establece que todo objeto hereda tiene como punto de partida el System.Object.
     ///           
     ///           Un programa en C# es una colección de tipos: classes, structs, enums, interfaces, delegates. 
-    ///           Como cualquier lenguaje de programación, C# proporciona una serie de tipos predefinidos (int, byte, char, string, object...) y mecanismos para que el usuario cree sus propios tipos. 
+    ///           Como cualquier lenguaje de programación, C# proporciona una serie de tipos predefinidos (int, byte, char, string, object...) 
+    ///           y mecanismos para que el usuario cree sus propios tipos. 
     ///           Todo el código y todos los datos de una aplicación forman parte de objetos que encapsulan datos y código.
-    ///           En C#, un tipo puede incluir datos (campos, constantes, arrays y eventos), funciones (métodos, operadores, constructores, destructores, propiedades e indexadores) y otros tipos. 
+    ///           En C#, un tipo puede incluir datos (campos, constantes, arrays y eventos), funciones (métodos, operadores, constructores, 
+    ///           destructores, propiedades e indexadores) y otros tipos. 
     ///           Los tipos se organizan en ficheros, assemblies y espacios de nombres(de forma jerárquica). 
     ///           En el sistema unificado de tipos de la plataforma.NET, los tipos pueden ser valores(contienen datos, no pueden ser null)
     ///           o referencias(contienen referencias a otros objetos, pueden ser null).
@@ -123,6 +126,38 @@ namespace chsarp_intro._1_Tipos_de_datos
             if (!nullableY.HasValue) // se utiliza para evaluar si la variable tiene un valor asignado o tiene null
             {
                 nullableY = 5; // la asignación de valores es igual.
+            }
+
+            // formas de escribirlo:
+
+            // forma 1
+            string resultado = nullableX?.ToString();
+            // si nullableX tiene null, resultado1 = null
+            // si nullableX no tiene null, resultado1 = "0" por ejemplo
+
+            // forma 2
+            resultado = nullableX.HasValue ? nullableX.ToString() : null;
+
+            // forma 3
+            if (nullableX.HasValue)
+            {
+                resultado = nullableX.ToString();
+            }
+
+            // forma 1
+            resultado = nullableX?.ToString() ?? "null";
+
+            // forma 2
+            resultado = nullableX.HasValue ? nullableX.ToString() : "null";
+
+            // forma 3
+            if (nullableX.HasValue)
+            {
+                resultado = nullableX.ToString();
+            }
+            else
+            {
+                resultado = "null";
             }
 
             // la expresión nullableX?.ToString() intentará obtener el valor de 'nullableX' y si éste NO es null ejecutará el método "ToString()", sino retorna null

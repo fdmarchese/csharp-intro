@@ -12,12 +12,14 @@ namespace chsarp_intro._3_Clases_de_Usuario
 
         // La nomenclatura estándar para los atributos internos es camelCase con _ delante.
         private readonly List<Rueda> _ruedas;
+        // no podemos hacer asignaciones!! _ruedas = 
+        // _ruedas.Add() sí se puede hacer
 
         #endregion
 
         #region Constructores
 
-        // constructor vacío que inicializa la lista de Ruedas.
+        // constructor sin parámetros que inicializa la lista de Ruedas.
         public Auto()
         {
             _ruedas = new List<Rueda>();
@@ -31,6 +33,12 @@ namespace chsarp_intro._3_Clases_de_Usuario
             Marca = marca;
         }
 
+        public Auto(string marca, string color) 
+            : this(marca)
+        {
+            Color = color;
+        }
+
         #endregion
 
         #region Propiedades públicas
@@ -39,7 +47,16 @@ namespace chsarp_intro._3_Clases_de_Usuario
         public ushort CantidadDePuertas { get; set; }
         public DateTime FechaDeCreacion { get; }
         public string Marca { get; }
-        public IEnumerable<Rueda> Ruedas => _ruedas;
+        public IEnumerable<Rueda> Ruedas
+        {
+            get
+            {
+                return _ruedas;
+            }
+        }
+
+        // es análogo a escribir:
+        // public IEnumerable<Rueda> Ruedas => _ruedas;
 
         #endregion
 
@@ -51,7 +68,9 @@ namespace chsarp_intro._3_Clases_de_Usuario
                 throw new ArgumentNullException(nameof(rueda));
 
             if (!EsRuedaValida(rueda))
+            {
                 throw new InvalidOperationException($"La rueda {nameof(rueda)} no es apta para el auto.");
+            }
 
             _ruedas.Add(rueda);
         }

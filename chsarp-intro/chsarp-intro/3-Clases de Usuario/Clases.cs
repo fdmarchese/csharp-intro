@@ -29,7 +29,7 @@ namespace chsarp_intro._3_Clases_de_Usuario
 
             Console.WriteLine($"Ejecutamos el método '{nameof(Auto.AddRueda)}' del objeto auto");
             auto.AddRueda(new Rueda { Marca = "Firestone", Rodado = 175 });
-            auto.AddRueda(new Rueda { Marca = "Firestone", Rodado = 175 });
+            auto.AddRueda(new Rueda { Marca = "Firestone", Rodado = 180 });
 
             Console.WriteLine("El auto posee las siguientes ruedas:");
 
@@ -85,14 +85,14 @@ namespace chsarp_intro._3_Clases_de_Usuario
 
             // Se definió, adicionalmente, una clase Cuadrado, pero ésta deriva de Rectángulo ya que su implementación interna es casi idéntica.
             // Creamos una instancia de tipo Cuadrado:
-            var cuadrado1 = new Cuadrado(5); // Como vemos, el cuadrado sólo recibe 1 parémtro, internamente 
+            var cuadrado1 = new Cuadrado(5); // Como vemos, el cuadrado sólo recibe 1 parámetro, internamente 
             // el constructor de cuadrado está llamando al base constructor (el constructor de rectángulo) 
             // pasándole el parámetro tanto para alto como para ancho.
 
             Console.WriteLine($"Definimos en {nameof(Figura)} que todas las clases derivadas de ella deben implementar {nameof(Figura.Nombre)} y {nameof(Figura.CalcularArea)}");
             Console.WriteLine($"Como {nameof(cuadrado1)} es de tipo {nameof(Cuadrado)} y éste deriva de {nameof(Rectangulo)} que a su ver deriva de {nameof(Figura)}");
             Console.WriteLine($"Podemos aseverar que {nameof(cuadrado1)} tiene implementado el {nameof(Cuadrado.Nombre)} así: {cuadrado1.Nombre}");
-            Console.WriteLine($"Y tiene implementado el método {nameof(Rectangulo.CalcularArea)} así: {rectangulo1.CalcularArea()}");
+            Console.WriteLine($"Y tiene implementado el método {nameof(Cuadrado.CalcularArea)} así: {cuadrado1.CalcularArea()}");
         }
     }
 }

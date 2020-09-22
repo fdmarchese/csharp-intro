@@ -46,6 +46,7 @@ namespace chsarp_intro
             { Opcion.Linq_Ordering, Linq.Ordering },
             { Opcion.Linq_Select, Linq.Select },
             { Opcion.Extension_Methods, ExtensionMethods.Definicion },
+            { Opcion.Herencia, Clases.Herencia },
         };
 
         public static void Execute(Opcion opcion)

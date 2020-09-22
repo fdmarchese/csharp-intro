@@ -65,7 +65,6 @@ namespace chsarp_intro._1_Tipos_de_datos
             // Transformar un texto en minúsculas
             Console.WriteLine($"Para transformar a minúsculas podemos utilizar unTexto.ToLower() y el resultado es: {unTexto.ToLower()}");
 
-
             Console.WriteLine("Para ver si un texto está contenido en un string podemos utilizar la función unTexto.Contains(\"texto\")");
             Console.WriteLine($"En este caso podemos buscar 'texto' dentro de la variable y el resultado es: {unTexto.Contains("texto")}");
             // como se puede notar no lo encontró y es lógico ya que "Texto" != "texto".

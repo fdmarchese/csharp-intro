@@ -57,7 +57,7 @@ namespace chsarp_intro._1_Tipos_de_datos
 
             // Otro tema importante al momento de utilizar fechas es representarlas como string en el formato en que lo deseamos hacer.
             // el formato se aplica a través del método ToString(Formato) o bien en este caso podemos aplicarlo Fecha:Formato.
-            Console.WriteLine($"un formato común para Argentina es {DateTime.Now:dd-MM-yyyy}");
+            Console.WriteLine($"un formato común para Argentina es {DateTime.Now:dd/MM/yyyy}");
             Console.WriteLine($"DateTime ya nos provee algunos formatos pre armados como {DateTime.Now.ToShortDateString()} o {DateTime.Now.ToLongDateString()}");
             // sin embargo por lo general se aplica un formato custom definido en el sistema de manera uniforme para mostrar las fechas.
             // para más detalles en formas de representar ver aquí: https://docs.microsoft.com/es-es/dotnet/standard/base-types/custom-date-and-time-format-strings
