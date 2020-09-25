@@ -21,6 +21,7 @@ namespace chsarp_intro._3_Clases_de_Usuario
                 new CuentaCorriente(),
                 new CajaDeAhorro()
             };
+
             Console.WriteLine($"Declaramos una nueva variable {nameof(cuentas)} que es una colección de {nameof(ICuenta)}");
             Console.WriteLine("Adicionamos 4 elementos a la colección: 2 cajas de ahorro y 2 cuentas corrientes.");
 
@@ -41,7 +42,6 @@ namespace chsarp_intro._3_Clases_de_Usuario
                 if (cuenta is CuentaCorriente)
                     cuenta.Depositar(50M);
             }
-
 
             Console.WriteLine("Obtenemos el balance de cada una de las cuentas indistintamente de si se trata de caja de ahorro o cuenta corriente");
             foreach (ICuenta cuenta in cuentas)

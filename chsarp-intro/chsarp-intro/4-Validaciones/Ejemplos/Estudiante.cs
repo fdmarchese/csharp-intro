@@ -6,9 +6,11 @@ namespace chsarp_intro._4_Validaciones
     public class Estudiante
     {
         [Required(ErrorMessage = "El campo {0} es requerido")]
+        [RegularExpression(@"[a-zA-Z áéíóú]*", ErrorMessage = "El nombre admite sólo caracteres alfabéticos")]
+        [MaxLength(100, ErrorMessage = "El campo {0} admite un máximo de {1} caracteres")]
         public string Nombre { get; set; }
 
-        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [Required(ErrorMessage = "El campo {0} es requerido")] 
         [MaxLength(100, ErrorMessage = "El campo {0} admite un máximo de {1} caracteres")]
         public string Apellido { get; set; }
 

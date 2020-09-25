@@ -18,5 +18,7 @@ namespace chsarp_intro._3_Clases_de_Usuario
         }
 
         public string GetBalance() => $"El balance de la Caja de ahorro es de ${_balance:N2}";
+
+        public string EsteEsUnEjemplo() => "ejemplo";
     }
 }

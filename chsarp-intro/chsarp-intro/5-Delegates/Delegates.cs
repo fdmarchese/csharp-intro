@@ -105,6 +105,7 @@ namespace chsarp_intro._5_Delegates
 
         #region Métodos privados
 
+        // análogo a Func<int, int, int>
         private delegate int SumaDelegate(int x, int y);
 
         private static int Suma(int primerSumando, int segundoSumando) => primerSumando + segundoSumando;
