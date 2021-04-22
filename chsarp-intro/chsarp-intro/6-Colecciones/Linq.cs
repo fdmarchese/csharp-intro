@@ -208,7 +208,6 @@ namespace chsarp_intro._6_Colecciones
             var listaDeNombresSinDuplicados = _productos.Select(producto => producto.Nombre).Distinct();
 
             Console.WriteLine($"Los elementos de la colección son: {string.Join(", ", listaDeNombresSinDuplicados.ToArray())}");
-
         }
 
         #region Sección privada
