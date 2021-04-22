@@ -57,8 +57,9 @@ namespace chsarp_intro._6_Colecciones
 
             Console.WriteLine();
 
-            // utilizando el lenguaje de consultas de Linq:
-            var conMetodos = _productos.Where(producto => producto.Precio >= 100M);
+            // utilizando el lenguaje de métodos de extensión de Linq:
+            var conMetodos = _productos
+                .Where(producto => producto.Precio >= 100M);
 
             Console.WriteLine("Los productos obtenidos son:");
 
@@ -88,8 +89,11 @@ namespace chsarp_intro._6_Colecciones
 
             Console.WriteLine();
 
-            // utilizando el lenguaje de consultas de Linq:
-            var conMetodos = _productos.OrderByDescending(producto => producto.Precio); // si quisiera ordenar de forma ascendente usamos el método 'OrderBy()'
+            // utilizando el lenguaje de métodos de extensión de Linq:
+            var conMetodos = _productos.OrderByDescending(producto => producto.Precio).ToList(); // si quisiera ordenar de forma ascendente usamos el método 'OrderBy()'
+
+            // ordenamiento por más de un criterio
+            conMetodos = _productos.OrderBy(producto => producto.Precio).ThenByDescending(producto => producto.Nombre).ToList();
 
             Console.WriteLine("Los productos obtenidos son:");
 
@@ -106,7 +110,7 @@ namespace chsarp_intro._6_Colecciones
         /// </summary>
         public static void Select()
         {
-            Console.WriteLine("Ejecutaremos consultas para obtener los productos ordenados por precio de forma descendiente.");
+            Console.WriteLine("Ejecutaremos consultas para seleccionar los nombres de productos.");
 
             // utilizando el lenguaje de consultas de Linq:
             var conLenguajeDeConsultas = from producto in _productos
@@ -119,13 +123,92 @@ namespace chsarp_intro._6_Colecciones
 
             Console.WriteLine();
 
-            // utilizando el lenguaje de consultas de Linq:
-            var conMetodos = _productos.Select(producto => producto.Nombre);
+            // utilizando el lenguaje de métodos de extensión de Linq:
+            var conMetodos = _productos.Select(producto => producto.Nombre).ToList();
 
             Console.WriteLine("Los productos obtenidos son:");
 
             foreach (string nombre in conMetodos)
                 Console.WriteLine(nombre);
+        }
+
+        /// <summary>
+        /// El Min es una función de agregación que nos permite obtener el mínimo valor de una colección determinada.
+        /// Con la función lambda se puede especificar alguna propiedad a utilizarse para obtener el mínimo, por ejemplo en este caso se usará el precio.
+        /// </summary>
+        public static void Min()
+        {
+            Console.WriteLine("Ejecutaremos consultas para obtener el precio mínimo de la lista de productos.");
+
+            // utilizando el lenguaje de métodos de extensión de Linq:
+            var precioMinimo = _productos.Min(producto => producto.Precio);
+
+            Console.WriteLine($"El precio mínimo de los productos es {precioMinimo:N2}");
+        }
+
+        /// <summary>
+        /// El Max es una función de agregación que nos permite obtener el máximo valor de una colección determinada.
+        /// Con la función lambda se puede especificar alguna propiedad a utilizarse para obtener el máximo, por ejemplo en este caso se usará el precio.
+        /// </summary>
+        public static void Max()
+        {
+            Console.WriteLine("Ejecutaremos consultas para obtener el precio máximo de la lista de productos.");
+
+            var precioMaximo = _productos.Max(producto => producto.Precio);
+
+            Console.WriteLine($"El precio máximo de los productos es {precioMaximo:N2}");
+        }
+
+        /// <summary>
+        /// El Average es una función de agregación que nos permite obtener el valor promedio de una colección determinada.
+        /// Con la función lambda se puede especificar alguna propiedad a utilizarse para promediar, por ejemplo en este caso se usará el precio.
+        /// </summary>
+        public static void Average()
+        {
+            Console.WriteLine("Ejecutaremos consultas para obtener el precio promedio de la lista de productos.");
+
+            var precioPromedio = _productos.Average(producto => producto.Precio);
+
+            Console.WriteLine($"El precio promedio de los productos es {precioPromedio:N2}");
+        }
+
+        /// <summary>
+        /// Count es una función de que nos permite obtener la cantidad de elementos en una colección determinada.
+        /// </summary>
+        public static void Count()
+        {
+            Console.WriteLine("Ejecutaremos consultas para obtener la cantidad de elementos en la lista de productos.");
+
+            var cantidadDeElementos = _productos.Count();
+
+            Console.WriteLine($"La cantidad de productos es {cantidadDeElementos}");
+        }
+
+        /// <summary>
+        /// Sum es una función que nos permite sumarizar elementos de una colección determinada.
+        /// Con la función lambda se puede especificar alguna propiedad a utilizarse para sumarizar, por ejemplo en este caso se usará el precio.
+        /// </summary>
+        public static void Sum()
+        {
+            Console.WriteLine("Ejecutaremos consultas para obtener el precio total de la lista entera de productos.");
+
+            var precioTotal = _productos.Sum(producto => producto.Precio);
+
+            Console.WriteLine($"El precio total de los productos es {precioTotal:N2}");
+        }
+
+        /// <summary>
+        /// El método Distinct nos permite obtener los objetos distintos de una colección.
+        /// </summary>
+        public static void Distinct()
+        {
+            Console.WriteLine("Ejecutaremos consultas para obtener la lista de nombres de productos sin duplicados.");
+
+            // obtenemos la lista de nombres de los productos y a dicha lista le aplicamos el distinct para que elimine los duplicados de la colección resultante.
+            var listaDeNombresSinDuplicados = _productos.Select(producto => producto.Nombre).Distinct();
+
+            Console.WriteLine($"Los elementos de la colección son: {string.Join(", ", listaDeNombresSinDuplicados.ToArray())}");
+
         }
 
         #region Sección privada
@@ -139,6 +222,7 @@ namespace chsarp_intro._6_Colecciones
             new Producto(Guid.NewGuid(), "Yerba", 5, 120M),
             new Producto(Guid.NewGuid(), "Galletitas", 6, 100M),
             new Producto(Guid.NewGuid(), "Bizcochos", 7, 80M),
+            new Producto(Guid.NewGuid(), "Yerba", 8, 130M),
         };
 
         #endregion
